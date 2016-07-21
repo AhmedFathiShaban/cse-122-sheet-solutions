@@ -278,7 +278,9 @@ void s2_q6()
 		}
 }
 
-void s2_q7()
+// NOTE THERE IS ANOTHER SOLUTION s2_q7_v2
+// THIS SOLUTION WORKS BUT IS NOT EFFICIENT , HENCE NOT PREFERABLE
+void s2_q7_v1()
 {
 	// FIND the average salesValue per month you have to sell , in order to have 80,000 per year for yourself.
 
@@ -311,7 +313,7 @@ void s2_q7_v2()
 
 	if(commision <= 5000*8/100.0)
 	{salesValue = commision *100/8.0f; }
-	else if(commision <= 10000*100/10.0f)
+	else if(commision <= 10000*10/100.0f)
 	{salesValue = commision *100/10.0f;}
 	else
 	{salesValue = commision *100/12.0f;}
@@ -671,7 +673,7 @@ int main()
 	//int x ;
 	//cin >> x;
 	//(x==5)?(cout<<5<<endl):(x==4)?(cout<<4<<endl):(cout << "HI" <<endl);
-	s2_q7();
+	s2_q7_v1();
 
 
 

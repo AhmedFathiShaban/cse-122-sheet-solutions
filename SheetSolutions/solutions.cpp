@@ -1250,6 +1250,10 @@ void s5_q9()
 
 
 int main(){
+	
+	// NOTE :: 
+	// C++  DOES NOT initialize "int x;" to zero automatically .
+	// I was wrong about that
 	cout << s4_q9_ToLower('g') <<endl;
 getch();
 return 0;

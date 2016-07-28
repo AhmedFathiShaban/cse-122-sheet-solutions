@@ -1,22 +1,32 @@
-﻿Build started 21/07/2016 12:42:02 م.
+﻿Build started 28/07/2016 12:52:07 م.
      1>Project "D:\CoursesToTeach\CSE122\VisualStudioProjects\SheetSols\SheetSolutions\SheetSolutions.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\SheetSolutions.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt solutions.cpp
          solutions.cpp
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(23): warning C4305: 'initializing' : truncation from 'int' to 'char'
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(23): warning C4309: 'initializing' : truncation of constant value
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(151): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(153): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(293): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(346): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(464): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(477): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(504): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(507): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(624): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(625): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(30): warning C4305: 'initializing' : truncation from 'int' to 'char'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(30): warning C4309: 'initializing' : truncation of constant value
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(158): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(160): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(300): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(353): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(471): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(484): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(511): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(514): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(631): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(632): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(795): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(909): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1179): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(249) : see declaration of 'freopen'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1180): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(249) : see declaration of 'freopen'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1254): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128) : see declaration of 'getch'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(857): warning C4715: 's4_q9_ToUpper' : not all control paths return a value
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(863): warning C4715: 's4_q9_ToLower' : not all control paths return a value
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -35,4 +45,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.86
+Time Elapsed 00:00:01.12

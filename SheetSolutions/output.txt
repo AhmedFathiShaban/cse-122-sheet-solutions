@@ -1,0 +1,2 @@
+The First Twelve Occured at index :: 0, Line :: 1
+The last Twelve Occured at index:: 249, Line :: 250

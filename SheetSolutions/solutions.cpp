@@ -8,6 +8,7 @@
 
 #include <map>
 #include <cstdio>
+#include<string>
 
 using namespace std;
 
@@ -904,10 +905,36 @@ void my_numeric_limits()
 }
 
 
-int s4_q11(float x)
+float s4_q11_v1(float x)
 {
 	return sin(x);
 }
+
+double s4_q11_v2(double x , unsigned long long M)
+{
+	double result = x;
+	double intermediateResult = x;
+
+	for( int i = 1 ; i<=M ; i++)
+	{
+		//Before entering the loop  intermediateResult = x ;
+
+		 intermediateResult = -1*intermediateResult*(x*x)/((2*i+1)*(2*i));
+		/*
+			After iteration #1 : intermediateResult  = -x^3/(3!)
+			After iteration #2 : intermediateResult  = +x^5/(5!)
+			After iteration #3 : intermediateResult  = -x^7/(7!)
+			
+			And so on. 
+			This helps us solve the overflow problem.
+		*/
+
+	   	result = result +  intermediateResult;
+	}
+return result;
+}
+
+
 
 double s4_q12(float x)
 {
@@ -973,7 +1000,7 @@ void s5_q1()
 {
 	// a) Valid only if you declate "f" as const , "const int f = 4; " if you do not specify const it is invalid .
 	// b)  invalid
-	// c) invalid
+	// c) valid
 }
 
 void s5_q2()
@@ -1245,16 +1272,235 @@ void s5_q9()
 
 }
 
+/*   ****************** SHEET 6 *****************************   */
+
+/*   NOT INCLUDED IN THE MIDTERM EXAM   */
+
+void s6_q1()
+{
+	string x;
+	cout << "Enter your string :: \n" ;
+
+	getline(cin,x);
+
+	cout << x[0];
+
+	for(int i = 1 ; i<x.size()-1;i++)
+	{
+		if(x[i]==' ')cout<<x[i+1];
+	}
+	cout << endl <<x << endl;
+
+}
+
+void s6_q2()
+{
+string x ;
+
+getline(cin,x);
+
+for(int i = 0 ; i <x.size(); i++)
+{
+	if(x[i]>='a' && x[i]<='z')
+		x[i] = x[i] + - ('a'-'A');
+}
+
+cout << x ;
+}
+
+void s6_q3()
+{
+	string x;
+	getline(cin,x);
+
+	for(int i = x.size()-1 ; i>=0 ; i--)
+	{
+	cout<<x[i];
+	}
+
+}
+
+void s6_q4()
+{
 
 
+	char vowls[7] = {'a','e','o','i','y','u','\0'};
+
+	int arr[6] = {0,0,0,0,0,0};
+
+	string x;
+	getline(cin,x);
+
+	for(int i = 0 ; i<x.size(); i++)
+	{
+		for(int j = 0 ; j<6 ; j++)
+		{
+			if(x[i]==vowls[j] || x[i]==vowls[j]-('a'-'A')) arr[j]++;
+		}
+	}
+
+	for(int i = 0 ;i<6 ; i++)
+		cout << vowls[i] << " ::: " <<  arr[i] << endl;
+
+}
+
+void s6_q5()
+
+{
+	string x ;
+	getline(cin,x);
+	char previous= 'A';
+	int NumWords ;
+	if(!x.empty())
+	NumWords = 1;
+
+	for(int i = 0 ; i< x.size() ;i++)
+	{
+		if(x[i] == ' ' && previous !=' ')
+			NumWords ++;
+
+		previous = x[i];
+	}
+
+	if(x[x.size()-1] == ' ') NumWords --;
+
+	cout << "NUM WORDS = " << NumWords <<endl;
+
+}
+
+void s6_q6()
+{
+string x,y,z;
+
+getline(cin,x);
+getline(cin,y);
+
+z = x.append(y);
+
+cout << z << endl;
+
+}
+
+void s6_q7()
+{
+	string x = "C is a general purpose computer programming language developed in 1972 by Dennis"
+				"Ritchie at the Bell Telephone Laboratories for use with the UNIX operating system."
+				"Although C was designed for implementing system software, it is also widely used for"
+				"developing portable application software. C is one of the most popular programming"
+				"languages. It is widely used on many different software platforms, and there are few"
+				"computer architectures for which a C compiler does not exist. C has greatly influenced"
+				"many other popular programming languages, most notably C++, which originally began"
+				"as an extension to C." ;
+
+for(int i = 0 ; i <x.size(); i++)
+{
+	if(x[i]>='a' && x[i]<='z')
+		x[i] = x[i] + - ('a'-'A');
+}
+
+const int NumEnglishLetters = 26;
+int freq [NumEnglishLetters];
+
+for(int i = 0 ; i<NumEnglishLetters ; i++)
+	freq[i] = 0;
+
+for(int i =0 ; i <x.size(); i++)
+{
+	if(x[i] >='A' || x[i]<='Z')
+	freq[(int)(x[i]-'A')]++ ;
+
+}
+
+for(int i = 0 ; i<NumEnglishLetters ; i++)
+	cout << freq[i] << "  " ;
+
+}
+
+void s6_q8()
+{
+		string x = "C is a general purpose computer programming language developed in 1972 by Dennis"
+				"Ritchie at the Bell Telephone Laboratories for use with the UNIX operating system."
+				"Although C was designed for implementing system software, it is also widely used for"
+				"developing portable application software. C is one of the most popular programming"
+				"languages. It is widely used on many different software platforms, and there are few"
+				"computer architectures for which a C compiler does not exist. C has greatly influenced"
+				"many other popular programming languages, most notably C++, which originally began"
+				"as an extension to C." ;
+
+		int position = -1;
+		int Freq = 0;
+
+		while((position = x.find("programming"))!= string::npos)
+		{
+		x= x.substr(position+1);
+		Freq++;
+		}
+
+		cout << Freq << endl;
+}
+
+int s6_q9_atoi(const char str[])
+{
+	int i = 0;
+	for(; str[i]!='\0' ; i++)
+		;
+	
+	int integerValue = 0 ;
+	int k = 0;
+	for(int j = i-1 ; j >= 0 ; j--)
+	{
+		integerValue+=(str[j]-'0')*pow(10.0f,k);
+		k++;
+	}
+
+	return integerValue;
+}
+
+float s6_q9_atof(const char str[])
+{
+	int i = 0;
+	int periodPosition=-1;
+	bool foundPeriod = 0;
+
+	for( ; str[i]!='\0';i++)
+	{
+		if(str[i]=='.') 
+			{
+				foundPeriod = 1;
+				periodPosition = i;
+				break;
+			}
+	}
+
+	if(foundPeriod == 0)
+	{
+		int result = s6_q9_atoi(str);
+		return (float)result;
+	}
+
+	float floatValue = 0;
+	int power = 1;
+	for(int j = periodPosition+1 ;str[j]!='\0';j++ )
+	{
+		floatValue += (str[j]-'0')/pow(10.0,power);
+		power++;
+	}
+	power=0;
+
+	for(int j = periodPosition-1 ;j>=0;j-- )
+	{
+		floatValue += (str[j]-'0')*pow(10.0,power);
+		power++;
+	}
+// REMEMBER YOU CAN USE setprecision to prevent rounding . EX :  cout << setprecision(7) << 189.3128;
+	return floatValue;
+
+}
 
 
 int main(){
-	
-	// NOTE :: 
-	// C++  DOES NOT initialize "int x;" to zero automatically .
-	// I was wrong about that
-	cout << s4_q9_ToLower('g') <<endl;
+	double pi = 22.0/7;
+	cout << s4_q11_v2(3.14,999) <<endl;
 getch();
 return 0;
 }

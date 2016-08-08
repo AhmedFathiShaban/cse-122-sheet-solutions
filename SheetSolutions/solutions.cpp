@@ -1537,7 +1537,7 @@ int s6_q9_myStrCmp(const char str1[],const char str2[])
 	int i = 0;
 	for( ;str1[i]!='\0';i++)
 		{
-			//if(str2[i]=='\0') return 1;
+			//if(str2[i]=='\0') return 1; // Not required, but is OK to add
 			if(str1[i]>str2[i])return 1;
 			else if(str1[i]<str2[i])return -1;
 		}
@@ -1598,14 +1598,13 @@ return x*s7_q1_factorial(x-1);
 
 }
 
- int s7_q2_GCD( int x , int y)
+ int s7_q2_GCD( int a , int b)
 {
-int larger = (x>y)?x:y;
-int smaller =(x>y)?y:x;
+	if(b==0)return a;
 
-if(smaller==0)return larger;
+	return s7_q2_GCD(b,a%b);
 
-return s7_q2_GCD(smaller,larger%smaller); 
+ 
 
 }
 
@@ -1663,17 +1662,7 @@ return s7_q5_test(x + 1, y - 1);
 
 int main()
 {
-	char x[6];
-	char y[6];
-	char z[8];
-
-	cin.getline(x,6);
-	cin.getline(y,6);
-	strcpy(z,x);
-	strcat(z,y);
-
-	cout << x << y <<endl;
-	cout << z <<endl;
+cout << s7_q2_GCD(18,0) <<endl;
 	system("pause");
 }
 

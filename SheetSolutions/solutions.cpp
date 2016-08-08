@@ -1278,60 +1278,69 @@ void s5_q9()
 
 void s6_q1()
 {
-	string x;
+	const int size = 40;
+	char x[size];
 	cout << "Enter your string :: \n" ;
 
-	getline(cin,x);
+	cin.get(x,size);
 
 	cout << x[0];
 
-	for(int i = 1 ; i<x.size()-1;i++)
+	for(int i = 1 ; i<size-1;i++)
 	{
 		if(x[i]==' ')cout<<x[i+1];
 	}
-	cout << endl <<x << endl;
 
+	cout << endl;
 }
 
 void s6_q2()
 {
-string x ;
+const int size = 40;
+char x[size];
 
-getline(cin,x);
+cin.get(x,40);
 
-for(int i = 0 ; i <x.size(); i++)
+for(int i = 0 ; i <size; i++)
 {
 	if(x[i]>='a' && x[i]<='z')
 		x[i] = x[i] + - ('a'-'A');
 }
 
-cout << x ;
+cout << x <<endl ;
 }
 
 void s6_q3()
 {
-	string x;
-	getline(cin,x);
+	const int size = 40;
+	char x[size];
+	char y[size];
+	cin.getline(x,size);
 
-	for(int i = x.size()-1 ; i>=0 ; i--)
+    int ActualNumberRead = strlen(x);
+
+	for(int i = ActualNumberRead-1 ; i>=0 ; i--)
 	{
-	cout<<x[i];
+	y[ActualNumberRead-1-i] = x[i];
 	}
+
+	y[ActualNumberRead] = '\0';
+	cout << y <<endl;
 
 }
 
 void s6_q4()
 {
 
-
 	char vowls[7] = {'a','e','o','i','y','u','\0'};
 
 	int arr[6] = {0,0,0,0,0,0};
 
-	string x;
-	getline(cin,x);
+	const int size = 40;
+	char x[size];
+	cin.get(x,size);
 
-	for(int i = 0 ; i<x.size(); i++)
+	for(int i = 0 ; i<size; i++)
 	{
 		for(int j = 0 ; j<6 ; j++)
 		{
@@ -1347,14 +1356,18 @@ void s6_q4()
 void s6_q5()
 
 {
-	string x ;
-	getline(cin,x);
+	const int size = 40;
+	char x[size];
+	cin.getline(x,size);
+
 	char previous= 'A';
-	int NumWords ;
-	if(!x.empty())
+	int NumWords=0 ;
+
+	int NumCharsRead = strlen(x);
+	if( NumCharsRead != 0)
 	NumWords = 1;
 
-	for(int i = 0 ; i< x.size() ;i++)
+	for(int i = 0 ; i< NumCharsRead ;i++)
 	{
 		if(x[i] == ' ' && previous !=' ')
 			NumWords ++;
@@ -1362,7 +1375,8 @@ void s6_q5()
 		previous = x[i];
 	}
 
-	if(x[x.size()-1] == ' ') NumWords --;
+	if(x[NumCharsRead-1] == ' ') NumWords --;
+	if(x[0]==' ')NumWords--;
 
 	cout << "NUM WORDS = " << NumWords <<endl;
 
@@ -1370,12 +1384,43 @@ void s6_q5()
 
 void s6_q6()
 {
-string x,y,z;
+	const int first_size = 10;
+	const int second_size = 10;
+	const int conc_size = first_size+second_size;
 
-getline(cin,x);
-getline(cin,y);
+char x[first_size];
+char y[second_size];
+char z[conc_size];
 
-z = x.append(y);
+cin.getline(x,first_size);
+
+int firstActualSize = strlen(x); 
+
+cout << firstActualSize <<endl;
+
+cin.getline(y,second_size);
+
+int secondActualSize = strlen(y);
+cout << secondActualSize << endl;
+
+
+strcpy(z,x);
+strcat(z,y); // to concatenate
+
+
+/*
+// IF YOU DON't WANT TO USE THE READY FUNCTION strcpy and strcat use this :: 
+
+for(int i = 0 ; i<firstActualSize ;i++)
+	z[i] = x[i];
+for(int i = 0 ; i<secondActualSize;i++)
+	z[i+firstActualSize] = y[i];
+
+z[firstActualSize+secondActualSize]= '\0' ;
+
+*/
+
+
 
 cout << z << endl;
 
@@ -1383,7 +1428,7 @@ cout << z << endl;
 
 void s6_q7()
 {
-	string x = "C is a general purpose computer programming language developed in 1972 by Dennis"
+	char x[] = "C is a general purpose computer programming language developed in 1972 by Dennis"
 				"Ritchie at the Bell Telephone Laboratories for use with the UNIX operating system."
 				"Although C was designed for implementing system software, it is also widely used for"
 				"developing portable application software. C is one of the most popular programming"
@@ -1392,7 +1437,7 @@ void s6_q7()
 				"many other popular programming languages, most notably C++, which originally began"
 				"as an extension to C." ;
 
-for(int i = 0 ; i <x.size(); i++)
+for(int i = 0 ; i <strlen(x); i++)
 {
 	if(x[i]>='a' && x[i]<='z')
 		x[i] = x[i] + - ('a'-'A');
@@ -1404,7 +1449,7 @@ int freq [NumEnglishLetters];
 for(int i = 0 ; i<NumEnglishLetters ; i++)
 	freq[i] = 0;
 
-for(int i =0 ; i <x.size(); i++)
+for(int i =0 ; i <strlen(x); i++)
 {
 	if(x[i] >='A' || x[i]<='Z')
 	freq[(int)(x[i]-'A')]++ ;
@@ -1418,7 +1463,7 @@ for(int i = 0 ; i<NumEnglishLetters ; i++)
 
 void s6_q8()
 {
-		string x = "C is a general purpose computer programming language developed in 1972 by Dennis"
+		char x[] = "C is a general purpose computer programming language developed in 1972 by Dennis"
 				"Ritchie at the Bell Telephone Laboratories for use with the UNIX operating system."
 				"Although C was designed for implementing system software, it is also widely used for"
 				"developing portable application software. C is one of the most popular programming"
@@ -1427,27 +1472,58 @@ void s6_q8()
 				"many other popular programming languages, most notably C++, which originally began"
 				"as an extension to C." ;
 
-		int position = -1;
-		int Freq = 0;
+		const int prog_size = 12;
+		char y[] ="programming"; 
+		int NumOfOcuurences = 0;
 
-		while((position = x.find("programming"))!= string::npos)
+	
+		for(int i = 0 ; i<strlen(x);i++)
 		{
-		x= x.substr(position+1);
-		Freq++;
+			
+			for(int j = 0 ; j< strlen(y) ; j++)
+			{
+				if(x[i+j]!=y[j])break;
+				if(j==strlen(y)-1)NumOfOcuurences ++;
+			}
+
+	/*		if(strncmp(&x,y,11)==0)
+				NumOfOcuurences ++ ;
+				*/
+		
 		}
 
-		cout << Freq << endl;
+		cout << NumOfOcuurences <<endl;
+
+
+}
+
+void  s6_q9_myStrCpy(char des[], const char src[])
+{
+	int i = 0;
+
+	for( ; i<strlen(src)+1;i++)
+		des[i]=src[i];
+
+
+
+}
+
+int s6_q9_myStrLen(const char str[])
+{
+	int i = 0;
+	for(;str[i]!='\0';i++)
+		;
+
+	return i;
+
 }
 
 int s6_q9_atoi(const char str[])
 {
-	int i = 0;
-	for(; str[i]!='\0' ; i++)
-		;
-	
+
 	int integerValue = 0 ;
 	int k = 0;
-	for(int j = i-1 ; j >= 0 ; j--)
+	for(int j = strlen(str)-1 ; j >= 0 ; j--)
 	{
 		integerValue+=(str[j]-'0')*pow(10.0f,k);
 		k++;
@@ -1455,6 +1531,21 @@ int s6_q9_atoi(const char str[])
 
 	return integerValue;
 }
+
+int s6_q9_myStrCmp(const char str1[],const char str2[])
+{
+	int i = 0;
+	for( ;str1[i]!='\0';i++)
+		{
+			//if(str2[i]=='\0') return 1;
+			if(str1[i]>str2[i])return 1;
+			else if(str1[i]<str2[i])return -1;
+		}
+	if(strlen(str1)==strlen(str2)) return 0;
+
+	else return -1;
+}
+
 
 float s6_q9_atof(const char str[])
 {
@@ -1498,11 +1589,92 @@ float s6_q9_atof(const char str[])
 }
 
 
-int main(){
-	double pi = 22.0/7;
-	cout << s4_q11_v2(3.14,999) <<endl;
-getch();
-return 0;
+unsigned long long s7_q1_factorial(int x)
+{
+if(x==0) return 1;
+if(x==1) return 1;
+
+return x*s7_q1_factorial(x-1);
+
+}
+
+ int s7_q2_GCD( int x , int y)
+{
+int larger = (x>y)?x:y;
+int smaller =(x>y)?y:x;
+
+if(smaller==0)return larger;
+
+return s7_q2_GCD(smaller,larger%smaller); 
+
+}
+
+ int s7_q3_fipponachi (int x)
+ {
+	if(x==0 || x==1) return 1;
+	 return s7_q3_fipponachi(x-1)+ s7_q3_fipponachi(x-2); 
+ }
+
+ void s7_q4_recFun(int x)
+{
+if (x > 10)
+{
+s7_q4_recFun(x / 10);
+cout << x % 10 << endl;
+}
+else
+cout << x << endl;
+}
+
+ int s7_q5_test(int x, int y)
+{
+if (x == y)
+return x;
+else if (x > y)
+return (x + y);
+else
+return s7_q5_test(x + 1, y - 1);
+}
+
+ int s7_q6_vowls(char x[],int index)
+ {
+	if(x[index]=='\0')return 0;
+	 if(x[index]=='a' || x[index]=='e'||x[index]=='o'||x[index]=='i'||x[index]=='u'||x[index]=='y'
+		 ||x[index]=='A' || x[index]=='E'||x[index]=='O'||x[index]=='I'||x[index]=='U'||x[index]=='Y')
+		 return 1+s7_q6_vowls(x,index+1);
+	 else return s7_q6_vowls(x,index+1);
+ 
+ }
+
+ int s7_q7_power(int x, int y)
+ {
+ if(y==0) return 1;
+ return x*s7_q7_power(x,y-1);
+ }
+
+ int s7_q8_search(int arr[],int size,int index,int valueToFind)
+ {
+
+	 if(index == size) return -1; // NOT FOUND
+	 if(arr[index] == valueToFind) return index;
+	 return s7_q8_search(arr,size,index+1,valueToFind);
+ 
+ }
+
+int main()
+{
+	char x[6];
+	char y[6];
+	char z[8];
+
+	cin.getline(x,6);
+	cin.getline(y,6);
+	strcpy(z,x);
+	strcat(z,y);
+
+	cout << x << y <<endl;
+	cout << z <<endl;
+	system("pause");
 }
 
 

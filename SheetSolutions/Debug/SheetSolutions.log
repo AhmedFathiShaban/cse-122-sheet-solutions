@@ -1,4 +1,4 @@
-﻿Build started 08/08/2016 02:51:08 م.
+﻿Build started 17/08/2016 02:15:41 م.
      1>Project "D:\CoursesToTeach\CSE122\VisualStudioProjects\SheetSols\SheetSolutions\SheetSolutions.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\SheetSolutions.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -34,6 +34,25 @@
      1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1528): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
      1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1576): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
      1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1583): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1709): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1725): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1726): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1727): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1974): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1974): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1974): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1974): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1989): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1994): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2028): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(175) : see declaration of 'strncat'
+     1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2032): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strdup. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(238) : see declaration of 'strdup'
      1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(858): warning C4715: 's4_q9_ToUpper' : not all control paths return a value
      1>d:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(864): warning C4715: 's4_q9_ToLower' : not all control paths return a value
        ManifestResourceCompile:

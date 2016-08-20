@@ -2007,7 +2007,53 @@ void s9_q5()
 	cout<<"HOHO :: " << Values[i]<<endl;
 }
 
-char * s9_q6_my_own_strtok(char x[]="",bool reset=0)
+
+void easy_s9_q6()
+{
+	char Text[] = "7672.28 276763.22 0.767 1.2878 772.2 1878 152 0.0123";
+	int nvalues = 0;
+	double values[100];
+
+	int newNumberStart[100]; // An array to store the indices of the startings of the numbers in the string
+
+
+	int j = 0;
+	newNumberStart[j] = 0; // The string starts with a number.
+	++j;
+
+	// Store the indices of the startings of numbers in the array
+	for (int i = 0; i < strlen(Text); i++)
+	{
+		if (Text[i] == ' ')
+		{
+			newNumberStart[j] = i + 1;
+			++j;
+		}
+	}
+
+	// This line is important for the last number. Its importance will be clear if you read the following code section
+
+	newNumberStart[j] = strlen(Text) + 1;
+
+	for (int i = 0; i < j; i++)
+	{
+		int start_index = newNumberStart[i];
+		int finish_index = newNumberStart[i + 1];
+		char result[20] = "";
+
+		strncpy(result, &Text[start_index], (finish_index - start_index - 1));
+
+		values[nvalues] = (double)atof(result);
+		nvalues++;
+
+	}
+
+	for (int i = 0; i < nvalues; i++)
+		cout << setprecision(9) << values[i] << endl;
+}
+
+
+char * hard_s9_q6_my_own_strtok(char x[]="",bool reset=0)
 {	
 	
 	char number[100]="" ;
@@ -2040,7 +2086,7 @@ int nValues = 0;
 
 	char * value;
 
-	while ((value = s9_q6_my_own_strtok(Text)) != NULL)
+	while ((value = hard_s9_q6_my_own_strtok(Text)) != NULL)
 	{
 			Values[nValues]  = s6_q9_atof(value);
 			nValues++;
@@ -2049,7 +2095,7 @@ int nValues = 0;
 return nValues;
 }
 
-void s9_q6()
+void hard_s9_q6()
 {
 	char Text[] = "7672.28 276763.22 0.767 1.2878 772.2 1878 152 0.0123";
 	double Values[100];
@@ -2058,6 +2104,155 @@ void s9_q6()
 	for(int i=0;i<nValues;i++)
 	cout<<"HOHO :: " << Values[i]<<endl;
 }
+
+void s9_q7()
+{
+	int size;
+	cout << "Enter the size you want \n";
+	cin >> size;
+	float * x  = new float[size];
+
+	for(int i = 0 ; i<size ; i++)
+	{
+		cout << "Enter Value # " << i << endl;
+		cin >> x[i];
+	}
+
+
+	// Do what you want with the array then delete it to release the memory
+
+
+	delete[]x;
+}
+
+void s9_q8()
+{
+	int rows, cols;
+	cout << "Enter the number of rows , space , then the number of columns \n";
+
+	cin >> rows >> cols;
+
+	float ** x = new float *[rows];
+
+	for (int i = 0; i < rows; i++)
+		x[i] = new float[cols];
+
+	// Read values 
+
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < cols; j++)
+		{
+			cout << "Enter value for " << i << "," << j << endl;
+			cin >> x[i][j];
+		}
+
+	//Print values
+
+	for (int i = 0; i < rows; i++)
+	{
+	
+	for (int j = 0; j < cols; j++)
+		cout << x[i][j] << " ";
+	cout << endl;
+	}
+
+	// Release memory
+
+	for (int i = 0; i < rows; i++)
+		delete[] x[i];
+
+	delete[] x;
+
+}
+
+
+
+void s9_q9_static()
+{
+	const int numRows = 3;
+	const int numCols = 50;
+
+	char y[numRows][numCols];
+
+	for (int i = 0; i < numRows; i++)
+	{
+		cout << "Enter Name #" << i << endl;
+		cin.getline(*(y + i), numCols);
+	}
+
+	// Sorting is here - bubble sort
+
+	for (int i = 0; i < numRows; i++)
+		for (int j = 0; j < (numRows - 1); j++)
+		{
+			if (strcmp(*(y + j), *(y + j + 1)) == 1)
+			{
+				char  temp[numCols];
+				strcpy(temp, *(y + j));
+				strcpy(*(y + j), *(y + j + 1));
+				strcpy(*(y + j + 1), temp);
+
+			}
+		}
+
+	// End of sort 
+
+	//print after sort 
+	cout << endl << endl;
+	for (int i = 0; i < numRows; i++)
+		cout << *(y + i) << endl;
+}
+void s9_q9_dynamic()
+{
+	int numRows;
+
+	cout << " Enter the number of names you need to enter " << endl;
+	cin >> numRows;
+	cin.ignore();
+	// We used cin.ignore() because we will use cin.getline() soon.
+
+	int numCols = 50;
+	char ** y = new char *[numRows];
+	for (int i = 0; i < numRows; i++)
+		y[i] = new char[numCols];
+
+	for (int i = 0; i < numRows; i++)
+	{
+		cout << "Enter Name #" << i << endl;
+		cin.getline(*(y + i), numCols);
+	}
+
+	// Sorting is here - bubble sort
+
+	for (int i = 0; i < numRows; i++)
+		for (int j = 0; j < (numRows - 1); j++)
+		{
+			if (strcmp(*(y + j), *(y + j + 1)) == 1)
+			{
+				char * temp = new char[numCols];
+				strcpy(temp, *(y + j));
+				strcpy(*(y + j), *(y + j + 1));
+				strcpy(*(y + j + 1), temp);
+
+				delete[] temp;
+			}
+		}
+
+	// End of sort 
+
+	cout << endl << endl;
+	for (int i = 0; i < numRows; i++)
+		cout << *(y + i) << endl;
+
+
+	// Release dynamic memory 
+	for (int i = 0; i < numRows; i++)
+		delete[] * (y + i);
+
+	delete[] y;
+}
+
+
 
 void pointers_additional_notes()
 {
@@ -2163,6 +2358,8 @@ void s10_q1()
 	cout << " Highest Price Movie is " << MyMovies[MaxPriceIndex].movieTitle <<endl;
 }
 
+// Question 2
+
 struct Auto
 {
 	int index;
@@ -2199,6 +2396,9 @@ void s10_q2()
 			cout << MyCars[i].index <<endl;
 	}
 }
+
+
+// Question 3
 
 struct Student
 {
@@ -2287,22 +2487,196 @@ void s10_q3()
 			}
 }
 
+// Question 4
 
-int main()
+struct Employee 
 {
-	int x = 50;
-	int * y = &x;
 
-	char * z = (char*)y;
+	struct
+	{
+		char * firstName = "";
+		char * middleName = "";
+		char * lastName = "";
+	} Name;
+
+	struct
+	{
+		char* addressOne = "";
+		char* addressTwo = "";
+		char* city = "";
+		int zipCode = 0;
+	} Address;
+
+	struct
+	{
+		int day, month, year;
+	} HiringDate;
+	struct
+	{
+		char * phone, *cellPhone, *fax, *email;
+	} ContactInformation;
+
+	char * fullName;
+	int index;
+
+	// static variables inside a struct are different from static variables we saw before
+	// a static variable inside a struct is a variable that has the same value for all instances of the struct.
+	// to access a static variable you use the struct name directly
+	// for example you use :: " Employee :: totalNumberOfEmployees  = 4 ". 
+	// Note you can also use a specific instance of the struct to access the same static variable , for example you can use 
+	// "Employee e0 ;  e0.totalNumberOfEmplyees = 2" . This will change the shared static variable, but it is not recommended to use it this way.
+
+	static int totalNumberOfEmployees ;
 
 
+	// static function is very similar. this following function is for illustration only
+	// You can use it bothways :
+	// cout << Employee::getTotalNumberOfEmployees() << endl;
+	//or :: 
+	//Employee e0;
+	//cout << e0.getTotalNumberOfEmployees() << endl;
+	static int getTotalNumberOfEmployees()
+	{
+		return totalNumberOfEmployees;
+	}
 
-	cout << y << "   " <<(void *)z <<endl;
+	void addName(char * first, char* second, char* third)
+	{
+		this->Name.firstName = first;
+		this->Name.middleName = second;
+		this->Name.lastName = third;
 
+		this->index = totalNumberOfEmployees;
+		totalNumberOfEmployees++;
+
+		this->fullName = new char[150];
+		strcpy(this->fullName,this->Name.firstName);
+		strcat(this->fullName, " ");
+		strcat(this->fullName, this->Name.middleName);
+		strcat(this->fullName, " ");
+		strcat(this->fullName, this->Name.lastName);
+	}
+
+	void addAddress(char * addressOne, char* addressTwo, char* city, int zipCode)
+	{
+		this->Address.addressOne = addressOne;
+		this->Address.addressTwo = addressTwo;
+		this->Address.zipCode = zipCode;
+	}
+
+	void addHiringDate(int day, int month, int year)
+	{
+		this->HiringDate.day = day;
+		this->HiringDate.month = month;
+		this->HiringDate.year = year;
+	}
+
+	void addContactInfo(char *phone, char* cellPhone, char* fax, char* email)
+	{
+		this->ContactInformation.phone = phone;
+		this->ContactInformation.cellPhone = cellPhone;
+		this->ContactInformation.fax = fax;
+		this->ContactInformation.email = email;
+	}
+};
+
+// A static variable inside a struct is initialized this way
+int Employee::totalNumberOfEmployees = 0;
+
+void s10_q4_sortArrayOfEmployeesByName(Employee employeeArray[], int numEmplyees)
+{
+
+
+	for(int i = 0 ; i<numEmplyees ; i++)
+		for (int j = 0; j < numEmplyees - 1; j++)
+		{
+			if (strcmp(employeeArray[j].fullName, employeeArray[j + 1].fullName) == 1)
+			{
+				Employee temp = employeeArray[j];
+				employeeArray[j] = employeeArray[j + 1];
+				employeeArray[j + 1] = temp;
+			}
+		}
+}
+
+void s10_q4_addEmployeeToArray(Employee employeeArray[], Employee& E, int maxNumberEmployees, int& actualNumberEmployees)
+{
+	if ((actualNumberEmployees + 1) < maxNumberEmployees)
+	{
+		employeeArray[actualNumberEmployees] = E;
+		actualNumberEmployees++;
+	}
+	else
+		cout << "NumEmployees Exceeded, Cant add more " << endl;
+
+}
+
+void s10_q4_removeEmployeeFromArray(Employee employeeArray[], Employee& E, int& actualNumberEmployees)
+{
+
+	for (int i = 0; i < actualNumberEmployees; i++)
+	{
+		if (employeeArray[i].index == E.index)
+		{
+			for (int j = i; j < actualNumberEmployees - 1; j++)
+			{
+				employeeArray[j] = employeeArray[j + 1];
+			}
+
+			actualNumberEmployees--;
+			break;
+		}
+	}
+}
+
+void s10_q4_printAllEmployeesInArray(Employee employeeArray[], int& actualNumberEmployees)
+{
+	for (int i = 0; i < actualNumberEmployees; i++)
+		cout << employeeArray[i].fullName << endl;
+}
+
+void s10_q4()
+{
+	Employee e0;
+	e0.addName("Yaser","Ali","Ibraheem");
+
+	Employee e1;
+	e1.addName("Ahmed", "Seleem", "Kareem");
+
+	Employee e2;
+	e2.addName("Tarek", "Fakhr", "Mohamed");
+
+	Employee e3;
+	e3.addName("Tarek", "Ahmed", "Shaban");
+
+	const int maxNumEmployees = 100;
+	int actualNumberEmployees = 0;
+	Employee employeeArray[maxNumEmployees];
 	
+	s10_q4_addEmployeeToArray(employeeArray,e0,  maxNumEmployees, actualNumberEmployees);
+	s10_q4_addEmployeeToArray(employeeArray, e1, maxNumEmployees, actualNumberEmployees);
+	s10_q4_addEmployeeToArray(employeeArray, e2, maxNumEmployees, actualNumberEmployees);
+	s10_q4_addEmployeeToArray(employeeArray, e3, maxNumEmployees, actualNumberEmployees);
+
+	s10_q4_printAllEmployeesInArray(employeeArray, actualNumberEmployees);
+
+	s10_q4_sortArrayOfEmployeesByName(employeeArray, actualNumberEmployees);
+
+	s10_q4_printAllEmployeesInArray(employeeArray, actualNumberEmployees);
+
+	s10_q4_removeEmployeeFromArray(employeeArray, e2, actualNumberEmployees);
+
+	s10_q4_printAllEmployeesInArray(employeeArray, actualNumberEmployees);
+
+	cout << Employee::getTotalNumberOfEmployees() << endl;
+	cout << e0.getTotalNumberOfEmployees() << endl;
+
+}
+int main ()
+{
+	s10_q4();
 
 	system("pause");
-    return 0;
 }
 
 

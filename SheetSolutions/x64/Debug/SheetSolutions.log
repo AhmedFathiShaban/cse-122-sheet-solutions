@@ -1,0 +1,77 @@
+﻿  solutions.cpp
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(31): warning C4305: 'initializing': truncation from 'int' to 'char'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(31): warning C4309: 'initializing': truncation of constant value
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(159): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(161): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(301): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(354): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(472): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(485): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(512): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(515): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(632): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(633): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(796): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1206): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(240): note: see declaration of 'freopen'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1207): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(240): note: see declaration of 'freopen'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1320): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1366): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1397): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1403): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1407): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1408): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1526): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1528): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1576): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1583): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1725): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1726): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1727): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1952): warning C4311: 'type cast': pointer truncation from 'int *' to 'int'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1952): warning C4302: 'type cast': truncation from 'int *' to 'int'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1974): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1974): warning C4305: 'initializing': truncation from 'double' to 'float'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1989): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(1994): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2036): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2043): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(346): note: see declaration of 'strncpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2073): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(255): note: see declaration of 'strncat'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2077): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(552): note: see declaration of 'strdup'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2188): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2189): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2190): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2230): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2231): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2232): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2546): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2547): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2548): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2549): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(2550): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(858): warning C4715: 's4_q9_ToUpper': not all control paths return a value
+e:\coursestoteach\cse122\visualstudioprojects\sheetsols\sheetsolutions\solutions.cpp(864): warning C4715: 's4_q9_ToLower': not all control paths return a value
+  SheetSolutions.vcxproj -> E:\CoursesToTeach\CSE122\VisualStudioProjects\SheetSols\SheetSolutions\x64\Debug\SheetSolutions.exe
+  SheetSolutions.vcxproj -> E:\CoursesToTeach\CSE122\VisualStudioProjects\SheetSols\SheetSolutions\x64\Debug\SheetSolutions.pdb (Full PDB)

@@ -875,10 +875,10 @@ void s4_q10()
 		char c;
 		while(cin>>c && TotalCount<100)
 		{
-			if ((int)c == 46) // Ascii code for period '.'
+			if (c == '.') // Ascii code for period '.'
 				break;
 
-			if((int)c>=65 && (int)c<=90) // Ascii code for all capital letters
+			if(c>='A' && (int)c<='Z') // Ascii code for all capital letters
 				NumCapital++;
 					
 			TotalCount ++;
@@ -905,12 +905,9 @@ void my_numeric_limits()
 }
 
 
-float s4_q11_v1(float x)
-{
-	return sin(x);
-}
 
-double s4_q11_v2(double x , unsigned long long M)
+
+double s4_q11_v1(double x , unsigned long long M)
 {
 	double result = x;
 	double intermediateResult = x;
@@ -934,7 +931,10 @@ double s4_q11_v2(double x , unsigned long long M)
 return result;
 }
 
-
+float s4_q11_v2(float x) // DO NOT CONSIDER THIS AS A RIGHT ANSWER
+{
+	return sin(x);
+}
 
 double s4_q12(float x)
 {

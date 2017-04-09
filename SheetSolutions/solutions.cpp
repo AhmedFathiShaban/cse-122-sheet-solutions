@@ -1451,7 +1451,7 @@ for(int i = 0 ; i<NumEnglishLetters ; i++)
 
 for(int i =0 ; i <strlen(x); i++)
 {
-	if(x[i] >='A' || x[i]<='Z')
+	if(x[i] >='A' && x[i]<='Z')
 	freq[(int)(x[i]-'A')]++ ;
 
 }
@@ -1480,15 +1480,11 @@ void s6_q8()
 		for(int i = 0 ; i<strlen(x);i++)
 		{
 			
-			for(int j = 0 ; j< strlen(y) ; j++)
-			{
-				if(x[i+j]!=y[j])break;
-				if(j==strlen(y)-1)NumOfOcuurences ++;
-			}
 
-	/*		if(strncmp(&x,y,11)==0)
+
+			if(strncmp(&x[i],y,11)==0)
 				NumOfOcuurences ++ ;
-				*/
+				
 		
 		}
 

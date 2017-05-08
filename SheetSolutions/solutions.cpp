@@ -1,4 +1,4 @@
-﻿#include <iostream>
+?#include <iostream>
 #include <iomanip> // for setw and setfill functions
 #include<cmath>
 
@@ -878,7 +878,7 @@ void s4_q10()
 			if (c == '.') // Ascii code for period '.'
 				break;
 
-			if(c>='A' && (int)c<='Z') // Ascii code for all capital letters
+			if(c>='A' && c<='Z') // Ascii code for all capital letters
 				NumCapital++;
 					
 			TotalCount ++;
@@ -905,9 +905,12 @@ void my_numeric_limits()
 }
 
 
+float s4_q11_v1(float x)
+{
+	return sin(x);
+}
 
-
-double s4_q11_v1(double x , unsigned long long M)
+double s4_q11_v2(double x , unsigned long long M)
 {
 	double result = x;
 	double intermediateResult = x;
@@ -931,10 +934,7 @@ double s4_q11_v1(double x , unsigned long long M)
 return result;
 }
 
-float s4_q11_v2(float x) // DO NOT CONSIDER THIS AS A RIGHT ANSWER
-{
-	return sin(x);
-}
+
 
 double s4_q12(float x)
 {
@@ -1480,11 +1480,15 @@ void s6_q8()
 		for(int i = 0 ; i<strlen(x);i++)
 		{
 			
+			for(int j = 0 ; j< strlen(y) ; j++)
+			{
+				if(x[i+j]!=y[j])break;
+				if(j==strlen(y)-1)NumOfOcuurences ++;
+			}
 
-
-			if(strncmp(&x[i],y,11)==0)
+	/*		if(strncmp(&x,y,11)==0)
 				NumOfOcuurences ++ ;
-				
+				*/
 		
 		}
 
@@ -2036,7 +2040,7 @@ void easy_s9_q6()
 		int start_index = newNumberStart[i];
 		int finish_index = newNumberStart[i + 1];
 		char result[20] = "";
-
+ 
 		strncpy(result, &Text[start_index], (finish_index - start_index - 1));
 
 		values[nvalues] = (double)atof(result);
@@ -2049,31 +2053,34 @@ void easy_s9_q6()
 }
 
 
-char * hard_s9_q6_my_own_strtok(char x[]="",bool reset=0)
-{	
-	
-	char number[100]="" ;
-//	strcpy(number,"");
-	static int current_index = 0;
-	static char* s = x;
-	if(reset)
-		{
-			current_index = 0;
-			s=x;
-		}
+char * hard_s9_q6_my_own_strtok(char * textI, char * delimiters)
+{
 
-	 if(s[current_index]=='\0') return NULL;
+	static int currentIndex = 0;
+	static char* text = textI;
+	if (textI != NULL)
+	{
+		currentIndex = 0;
+		text = textI;
+	}
 
-	for(	;	s[current_index]!=' ' ;	current_index++)
-		{
-			if(s[current_index]=='\0')break;
-			strncat(number,&s[current_index],1);
-		}
-	if(s[current_index]!='\0')current_index++;
+	if (currentIndex >= strlen(text))
+		return NULL;
+	char  temp[30];
+	int i = 0;
+	while (text[i+currentIndex] != ' ' && text[i + currentIndex] != '\0')
+	{
+		i++;
+	}
 
-	return strdup(number); // If you ever want to return a character array from a function You MUST use strdup
-	// If you return number ; directly you will get a wrong result
+	strncpy(temp, &text[currentIndex], i);
+	temp[i] = '\0';
+	currentIndex += i ;
+	currentIndex++;
+
+	return strdup(temp) ; // YOU MUST USE strdup (string dublicate if you want to return a string from a function. otherwise you might get wrong result)
 }
+
 
 int s9_q6_GetValues(char* Text, double* Values)
 {
@@ -2396,281 +2403,206 @@ void s10_q2()
 
 // Question 3
 
+
+#include <iostream>
+#include<iomanip>
+using namespace std;
+
 struct Student
 {
 	int id;
-	char name[50];
-	float sc1,sc2,sc3,sc4,sc5;
-
-		void calculateAverageAndGrade()
-	{
-		this->averageScore = (sc1+sc2+sc3+sc4+sc5)/5;
-		grade = (averageScore>=90) ? 'A' :(averageScore >=80) ? 'B' : (averageScore >=70) ? 'C' :(averageScore >=60)? 'D' :'F' ;
-	}
-
-		void printContent()
-		{
-			cout << "ID ::" << id << endl;
-			cout << "Name :: " << name <<endl;
-			cout << "Scores " << sc1 << "," <<sc2 << "," <<sc3 << "," <<sc4 << "," <<sc5 <<endl;
-			cout << "averageScore :: " << averageScore <<endl;
-			cout << "Grade :: " << grade <<endl; 
-		}
-		struct Address{int x ; int y; int z;} MyAddress;
-
-private :
+	char name[40];
+	int sc1, sc2, sc3, sc4, sc5;
 	float averageScore;
 	char grade;
-
-
 };
 
-void s10_q3()
+void calcGrade(Student * student)
 {
-		const int NumStudents = 2;
-	Student MyStudents[NumStudents];
-	for(int i = 0 ; i<NumStudents ; i++)
-	{
-		MyStudents[i].id = i;
-		cout << "Enter Student " << i << " Name :: " <<endl;
-		cin.getline(MyStudents[i].name,50);
-		cout << "Enter Student " << i << " sc1 :: "<<endl ;
-		cin>>MyStudents[i].sc1;
-		cin.ignore();
-		cout << "Enter Student " << i << " sc2 :: "<<endl ;
-		cin>>MyStudents[i].sc2;
-		cin.ignore();
-		cout << "Enter Student " << i << " sc3 :: "<<endl ;
-		cin>>MyStudents[i].sc3;
-		cin.ignore();
-		cout << "Enter Student " << i << " sc4 :: "<<endl ;
-		cin>>MyStudents[i].sc4;
-		cin.ignore();
-		cout << "Enter Student " << i << " sc5 :: "<<endl ;
-		cin>>MyStudents[i].sc5;
-		cin.ignore();
+	if (student->averageScore >= 90)
+		student->grade = 'A';
+	else if (student->averageScore >= 80)
+		student->grade = 'B';
+	else if (student->averageScore >= 70)
+		student->grade = 'C';
+	else if (student->averageScore >= 60)
+		student->grade = 'D';
+	else student->grade = 'F';
+}
+void main()
+{
+	const int size = 3;
+	Student students[size];
 
-		MyStudents[i].calculateAverageAndGrade();
-		MyStudents[i].MyAddress.x = 3;
-		cout << "\nHEEEEEEEEEEEEEEY " << MyStudents[i].MyAddress.x <<endl ;
+	for (int i = 0; i < size; i++)
+	{
+		cout << "Enter student " << i  << " id " <<endl;
+		cin >> students[i].id;
+		cin.ignore();
+		cout << "Enter student " << i << " name " << endl;
+		cin.getline(students[i].name, 40);
+		cout << "Enter student " << i << " subject grades " << endl;
+		cin >> students[i].sc1;
+		cin >> students[i].sc2;
+		cin >> students[i].sc3;
+		cin >> students[i].sc4;
+		cin >> students[i].sc5;
+		students[i].averageScore = (students[i].sc1 + students[i].sc2 + students[i].sc3 + students[i].sc4 + students[i].sc5) / 5.0;
+		calcGrade(&students[i]);
 	}
 
-	// Requirement D --> See also the printContent function in the struct definition
-	for(int i = 0 ; i<NumStudents ; i++)
+
+	for (int i = 0; i < size; i++)
 	{
-		MyStudents[i].printContent() ;
-		cout <<endl <<endl;
+		cout << setw(10)<<  left << students[i].id << ",";
+		cout << setw(10) << left << students[i].name << ",";
+		cout << setw(10) << left << students[i].averageScore << ",";
+		cout << setw(10) << left << students[i].grade << endl;
 	}
 
-	// Requirement E :: SortAlpabetically 
-
-	for(int i = 0 ; i<NumStudents ; i++)
-		for(int j = 0 ; j<NumStudents-1;j++)
+	for (int i = 0; i < size - 1; i++)
+	{
+		for (int j = 0; j < size - 1; j++)
 		{
-			if(strcmp(MyStudents[j].name,MyStudents[j+1].name)==1)
+			if ( strcmp(students[j].name , students[j+1].name) == 1)
 			{
-				Student temp = MyStudents[j];
-				MyStudents[j] = MyStudents[j+1];
-				MyStudents[j+1] = temp;
+				Student temp  = students[j];
+				strcpy(temp.name, students[j].name);
+
+				students[j] = students[j + 1];
+				strcpy(students[j].name, students[j + 1].name);
+
+				students[j + 1] = temp;
+				strcpy(students[j + 1].name, temp.name);
 			}
 		}
+	}
 
-		// Print After Sorting
-			for(int i = 0 ; i<NumStudents ; i++)
-			{
-				MyStudents[i].printContent() ;
-				cout <<endl <<endl;
-			}
+	cout << "AFTER SORTING  :: " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << setw(10) << left << students[i].id << ",";
+		cout << setw(10) << left << students[i].name << ",";
+		cout << setw(10) << left << students[i].averageScore << ",";
+		cout << setw(10) << left << students[i].grade << endl;
+	}
+	system("pause");
 }
 
-// Question 4
 
-struct Employee 
-{
+// Question 4 ( without the sorting part)
 
-	struct
-	{
-		char * firstName = "";
-		char * middleName = "";
-		char * lastName = "";
+struct Employee {
+
+	int uniqueId;
+	struct {
+		char first[20];
+		char middle[20];
+		char last[20];
 	} Name;
 
-	struct
-	{
-		char* addressOne = "";
-		char* addressTwo = "";
-		char* city = "";
-		int zipCode = 0;
+	struct {
+		char Address_1[40];
+		char Address_2[40];
+		char City[40];
+		int zip_code;
 	} Address;
 
-	struct
-	{
-		int day, month, year;
+	struct {
+		int day;
+		int month;
+		int year;
 	} HiringDate;
-	struct
-	{
-		char * phone, *cellPhone, *fax, *email;
-	} ContactInformation;
 
-	char * fullName;
-	int index;
-
-	// static variables inside a struct are different from static variables we saw before
-	// a static variable inside a struct is a variable that has the same value for all instances of the struct.
-	// to access a static variable you use the struct name directly
-	// for example you use :: " Employee :: totalNumberOfEmployees  = 4 ". 
-	// Note you can also use a specific instance of the struct to access the same static variable , for example you can use 
-	// "Employee e0 ;  e0.totalNumberOfEmplyees = 2" . This will change the shared static variable, but it is not recommended to use it this way.
-
-	static int totalNumberOfEmployees ;
-
-
-	// static function is very similar. this following function is for illustration only
-	// You can use it bothways :
-	// cout << Employee::getTotalNumberOfEmployees() << endl;
-	//or :: 
-	//Employee e0;
-	//cout << e0.getTotalNumberOfEmployees() << endl;
-	static int getTotalNumberOfEmployees()
-	{
-		return totalNumberOfEmployees;
-	}
-
-	void addName(char * first, char* second, char* third)
-	{
-		this->Name.firstName = first;
-		this->Name.middleName = second;
-		this->Name.lastName = third;
-
-		this->index = totalNumberOfEmployees;
-		totalNumberOfEmployees++;
-
-		this->fullName = new char[150];
-		strcpy(this->fullName,this->Name.firstName);
-		strcat(this->fullName, " ");
-		strcat(this->fullName, this->Name.middleName);
-		strcat(this->fullName, " ");
-		strcat(this->fullName, this->Name.lastName);
-	}
-
-	void addAddress(char * addressOne, char* addressTwo, char* city, int zipCode)
-	{
-		this->Address.addressOne = addressOne;
-		this->Address.addressTwo = addressTwo;
-		this->Address.zipCode = zipCode;
-	}
-
-	void addHiringDate(int day, int month, int year)
-	{
-		this->HiringDate.day = day;
-		this->HiringDate.month = month;
-		this->HiringDate.year = year;
-	}
-
-	void addContactInfo(char *phone, char* cellPhone, char* fax, char* email)
-	{
-		this->ContactInformation.phone = phone;
-		this->ContactInformation.cellPhone = cellPhone;
-		this->ContactInformation.fax = fax;
-		this->ContactInformation.email = email;
-	}
+	struct {
+		char phone[20];
+		char cellPhone[20];
+		char fax[20];
+		char email[20];
+	} ContactInfo;
 };
 
-// A static variable inside a struct is initialized this way
-int Employee::totalNumberOfEmployees = 0;
-
-void s10_q4_sortArrayOfEmployeesByName(Employee employeeArray[], int numEmplyees)
+struct Company
 {
+	int currentNumberOfEmployees = 0;
+	Employee companyEmployees[100];
+};
 
 
-	for(int i = 0 ; i<numEmplyees ; i++)
-		for (int j = 0; j < numEmplyees - 1; j++)
-		{
-			if (strcmp(employeeArray[j].fullName, employeeArray[j + 1].fullName) == 1)
-			{
-				Employee temp = employeeArray[j];
-				employeeArray[j] = employeeArray[j + 1];
-				employeeArray[j + 1] = temp;
-			}
-		}
-}
-
-void s10_q4_addEmployeeToArray(Employee employeeArray[], Employee& E, int maxNumberEmployees, int& actualNumberEmployees)
+bool addEmployeeToCompany(Company* c, Employee e)
 {
-	if ((actualNumberEmployees + 1) < maxNumberEmployees)
+	if (c->currentNumberOfEmployees >= 100)
 	{
-		employeeArray[actualNumberEmployees] = E;
-		actualNumberEmployees++;
+		cout << "Error : Company has full staff" << endl;
+		return 0;
 	}
-	else
-		cout << "NumEmployees Exceeded, Cant add more " << endl;
-
+	for(int i = 0 ; i< c->currentNumberOfEmployees ; i++)
+	{
+		if (e.uniqueId == c->companyEmployees[i].uniqueId)
+		{
+			cout << "Error : Id not unique" << endl;
+			return 0;
+		}
+	}
+	c->companyEmployees[c->currentNumberOfEmployees] = e;
+	c->currentNumberOfEmployees++;
+	return 1;
 }
 
-void s10_q4_removeEmployeeFromArray(Employee employeeArray[], Employee& E, int& actualNumberEmployees)
+bool removeEmployeeFromCompany(Company *c, int id)
 {
-
-	for (int i = 0; i < actualNumberEmployees; i++)
+	int indexOfEmployeeToDelete = -1;
+	for (int i = 0; i < c->currentNumberOfEmployees; i++)
 	{
-		if (employeeArray[i].index == E.index)
+		if ( c->companyEmployees[i].uniqueId == id)
 		{
-			for (int j = i; j < actualNumberEmployees - 1; j++)
-			{
-				employeeArray[j] = employeeArray[j + 1];
-			}
-
-			actualNumberEmployees--;
+			indexOfEmployeeToDelete = i;
 			break;
 		}
 	}
+
+	if (indexOfEmployeeToDelete == -1)
+		return 0;
+
+	for (int j = indexOfEmployeeToDelete; j < c->currentNumberOfEmployees - 1; j++)
+	{
+		c->companyEmployees[j] = c->companyEmployees[j + 1];
+	}
+
+	c->currentNumberOfEmployees--;
+
+	return 1;
 }
 
-void s10_q4_printAllEmployeesInArray(Employee employeeArray[], int& actualNumberEmployees)
+void main()
 {
-	for (int i = 0; i < actualNumberEmployees; i++)
-		cout << employeeArray[i].fullName << endl;
-}
+	Employee e1{ 1,{ "Ahmed","Fathy","Abdelmageed" },{ "a1","a2","city",123 },
+	{ 1,3,2015 },{ "123","444","555","a@gmail.com" } };
 
-void s10_q4()
-{
-	Employee e0;
-	e0.addName("Yaser","Ali","Ibraheem");
+	Employee e2{ 2,{ "Yaser","Fathy","Abdelmageed" },{ "a1","a2","city",123 },
+	{ 1,3,2015 },{ "123","444","555","a@gmail.com" } };
 
-	Employee e1;
-	e1.addName("Ahmed", "Seleem", "Kareem");
+	Employee e3{ 3,{ "Mohamed","Fathy","Abdelmageed" },{ "a1","a2","city",123 },
+	{ 1,3,2015 },{ "123","444","555","a@gmail.com" } };
 
-	Employee e2;
-	e2.addName("Tarek", "Fakhr", "Mohamed");
+	Company myCompany;
 
-	Employee e3;
-	e3.addName("Tarek", "Ahmed", "Shaban");
+	addEmployeeToCompany(&myCompany, e1);
+	addEmployeeToCompany(&myCompany, e2);
+	addEmployeeToCompany(&myCompany, e3);
 
-	const int maxNumEmployees = 100;
-	int actualNumberEmployees = 0;
-	Employee employeeArray[maxNumEmployees];
-	
-	s10_q4_addEmployeeToArray(employeeArray,e0,  maxNumEmployees, actualNumberEmployees);
-	s10_q4_addEmployeeToArray(employeeArray, e1, maxNumEmployees, actualNumberEmployees);
-	s10_q4_addEmployeeToArray(employeeArray, e2, maxNumEmployees, actualNumberEmployees);
-	s10_q4_addEmployeeToArray(employeeArray, e3, maxNumEmployees, actualNumberEmployees);
 
-	s10_q4_printAllEmployeesInArray(employeeArray, actualNumberEmployees);
+	for (int i = 0; i < myCompany.currentNumberOfEmployees; i++)
+	{
+		cout << myCompany.companyEmployees[i].Name.first << endl;
+	}
 
-	s10_q4_sortArrayOfEmployeesByName(employeeArray, actualNumberEmployees);
+	removeEmployeeFromCompany(&myCompany, 2);
 
-	s10_q4_printAllEmployeesInArray(employeeArray, actualNumberEmployees);
-
-	s10_q4_removeEmployeeFromArray(employeeArray, e2, actualNumberEmployees);
-
-	s10_q4_printAllEmployeesInArray(employeeArray, actualNumberEmployees);
-
-	cout << Employee::getTotalNumberOfEmployees() << endl;
-	cout << e0.getTotalNumberOfEmployees() << endl;
-
-}
-int main ()
-{
-	s10_q4();
+	for (int i = 0; i < myCompany.currentNumberOfEmployees; i++)
+	{
+		cout << myCompany.companyEmployees[i].Name.first << endl;
+	}
 
 	system("pause");
 }

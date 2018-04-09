@@ -1480,15 +1480,18 @@ void s6_q8()
 		for(int i = 0 ; i<strlen(x);i++)
 		{
 			
+		if(strncmp(&x[i],y,11)==0)
+				NumOfOcuurences ++ ;
+			
+			/*
 			for(int j = 0 ; j< strlen(y) ; j++)
 			{
 				if(x[i+j]!=y[j])break;
 				if(j==strlen(y)-1)NumOfOcuurences ++;
 			}
-
-	/*		if(strncmp(&x,y,11)==0)
-				NumOfOcuurences ++ ;
-				*/
+			
+			*/
+				
 		
 		}
 
